@@ -1,3 +1,8 @@
+local CHARACTER
+local HRP
+local pos
+local roundedPos
+
 --[=[
  d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
 88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
@@ -202,12 +207,13 @@ task.spawn(C_4);
 -- StarterGui.CFrameGrabber.Main.DropDown.CFrame.Display
 local function C_8()
 local script = G2L["8"];
-	local DISPLAY = script.Parent
-	
+local DISPLAY = script.Parent
 	task.spawn(function()
 		while true do
-			local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-			local roundedPos = Vector3.new(
+CHARACTER = game.Players.LocalPlayer:FindFirstChild("Character")
+HRP = CHARACTER:FindFirstChild("HRP")
+			pos = HRP.CFrame
+			roundedPos = Vector3.new(
 				math.round(pos.X),
 				math.round(pos.Y),
 				math.round(pos.Z)
@@ -223,9 +229,10 @@ task.spawn(C_8);
 local function C_b()
 local script = G2L["b"];
 	local C_B1 = script.Parent
-	
+CHARACTER = game.Players.LocalPlayer:FindFirstChild("Character")
+HRP = CHARACTER:FindFirstChild("HRP")
 	C_B1.MouseButton1Click:Connect(function()
-		setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
+		setclipboard(tostring(HRP.CFrame))
 		script.Parent.Text = "Copied!"
 		task.wait(1)
 		script.Parent.Text = "Copy to Clipboard"

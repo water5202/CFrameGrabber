@@ -7,11 +7,11 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 14 | Scripts: 3 | Modules: 0 | Tags: 0
+-- Instances: 17 | Scripts: 4 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.CFrameGrabber
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
 G2L["1"]["Name"] = [[CFrameGrabber]];
 
 
@@ -69,11 +69,11 @@ G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/RobotoMono.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["7"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["7"]["BackgroundTransparency"] = 1;
-G2L["7"]["Size"] = UDim2.new(0, 230, 0, 50);
+G2L["7"]["Size"] = UDim2.new(0, 230, 0, 31);
 G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["7"]["Text"] = [[CFrame : nan]];
 G2L["7"]["Name"] = [[CFrame]];
-G2L["7"]["Position"] = UDim2.new(0, 0, 0.07752, 0);
+G2L["7"]["Position"] = UDim2.new(0, 0, 0.10078, 0);
 
 
 -- StarterGui.CFrameGrabber.Main.DropDown.CFrame.Display
@@ -105,30 +105,54 @@ G2L["b"] = Instance.new("LocalScript", G2L["9"]);
 G2L["b"]["Name"] = [[WRITETOCLIPBOARD]];
 
 
--- StarterGui.CFrameGrabber.Main.Line
-G2L["c"] = Instance.new("Frame", G2L["2"]);
+-- StarterGui.CFrameGrabber.Main.DropDown.CloseUI
+G2L["c"] = Instance.new("TextButton", G2L["5"]);
 G2L["c"]["BorderSizePixel"] = 0;
-G2L["c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c"]["Size"] = UDim2.new(0, 230, 0, 1);
-G2L["c"]["Position"] = UDim2.new(0, 0, 1, 0);
+G2L["c"]["TextSize"] = 14;
+G2L["c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(45, 45, 45);
+G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/RobotoMono.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["c"]["Size"] = UDim2.new(0, 85, 0, 29);
 G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c"]["Name"] = [[Line]];
+G2L["c"]["Text"] = [[Close UI]];
+G2L["c"]["Name"] = [[CloseUI]];
+G2L["c"]["Position"] = UDim2.new(0.3087, 0, 0.3876, 0);
+
+
+-- StarterGui.CFrameGrabber.Main.DropDown.CloseUI.UICorner
+G2L["d"] = Instance.new("UICorner", G2L["c"]);
+
+
+
+-- StarterGui.CFrameGrabber.Main.DropDown.CloseUI.LocalScript
+G2L["e"] = Instance.new("LocalScript", G2L["c"]);
+
+
+
+-- StarterGui.CFrameGrabber.Main.Line
+G2L["f"] = Instance.new("Frame", G2L["2"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Size"] = UDim2.new(0, 230, 0, 1);
+G2L["f"]["Position"] = UDim2.new(0, 0, 1, 0);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Name"] = [[Line]];
 
 
 -- StarterGui.CFrameGrabber.Main.Circular
-G2L["d"] = Instance.new("Frame", G2L["2"]);
-G2L["d"]["ZIndex"] = -2;
-G2L["d"]["BorderSizePixel"] = 0;
-G2L["d"]["BackgroundColor3"] = Color3.fromRGB(66, 66, 66);
-G2L["d"]["Size"] = UDim2.new(0, 230, 0, 33);
-G2L["d"]["Position"] = UDim2.new(0, 0, -0.2069, 0);
-G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d"]["Name"] = [[Circular]];
+G2L["10"] = Instance.new("Frame", G2L["2"]);
+G2L["10"]["ZIndex"] = -2;
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(66, 66, 66);
+G2L["10"]["Size"] = UDim2.new(0, 230, 0, 33);
+G2L["10"]["Position"] = UDim2.new(0, 0, -0.2069, 0);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Name"] = [[Circular]];
 
 
 -- StarterGui.CFrameGrabber.Main.Circular.UICorner
-G2L["e"] = Instance.new("UICorner", G2L["d"]);
-G2L["e"]["CornerRadius"] = UDim.new(0, 5);
+G2L["11"] = Instance.new("UICorner", G2L["10"]);
+G2L["11"]["CornerRadius"] = UDim.new(0, 5);
 
 
 -- StarterGui.CFrameGrabber.Main.DS
@@ -178,7 +202,7 @@ task.spawn(C_4);
 -- StarterGui.CFrameGrabber.Main.DropDown.CFrame.Display
 local function C_8()
 local script = G2L["8"];
-	local CB2_5 = script.Parent
+	local DISPLAY = script.Parent
 	
 	task.spawn(function()
 		while true do
@@ -188,7 +212,7 @@ local script = G2L["8"];
 				math.round(pos.Y),
 				math.round(pos.Z)
 			)
-			CB2_5.Text = "CFrame : ".. tostring(roundedPos)
+			DISPLAY.Text = "CFrame : ".. tostring(roundedPos)
 			task.wait(0.000001)
 		end
 	end)
@@ -209,5 +233,15 @@ local script = G2L["b"];
 	end)
 end;
 task.spawn(C_b);
+-- StarterGui.CFrameGrabber.Main.DropDown.CloseUI.LocalScript
+local function C_e()
+local script = G2L["e"];
+	local C9_D1 = script.Parent.Parent.Parent.Parent
+	local C_D8 = script.Parent
+	C_D8.MouseButton1Click:Connect(function()
+		C9_D1:Destroy()
+	end)
+end;
+task.spawn(C_e);
 
 return G2L["1"], require;

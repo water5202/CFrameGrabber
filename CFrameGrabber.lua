@@ -225,7 +225,7 @@ local script = G2L["b"];
 	local C_B1 = script.Parent
 	
 	C_B1.MouseButton1Click:Connect(function()
-		setclipboard(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+		setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
 		task.wait(1)
 		script.Parent.Text = "Copied!"
 		task.wait(1)

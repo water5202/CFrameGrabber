@@ -210,8 +210,8 @@ local script = G2L["8"];
 local DISPLAY = script.Parent
 	task.spawn(function()
 		while true do
-CHARACTER = game.Players.LocalPlayer:FindFirstChild("Character")
-HRP = CHARACTER:FindFirstChild("HRP")
+CHARACTER = game.Players.LocalPlayer.Character
+HRP = CHARACTER:FindFirstChild("HumanoidRootPart")
 			pos = HRP.CFrame
 			roundedPos = Vector3.new(
 				math.round(pos.X),
@@ -229,10 +229,8 @@ task.spawn(C_8);
 local function C_b()
 local script = G2L["b"];
 	local C_B1 = script.Parent
-CHARACTER = game.Players.LocalPlayer:FindFirstChild("Character")
-HRP = CHARACTER:FindFirstChild("HRP")
 	C_B1.MouseButton1Click:Connect(function()
-		setclipboard(tostring(HRP.CFrame))
+		setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
 		script.Parent.Text = "Copied!"
 		task.wait(1)
 		script.Parent.Text = "Copy to Clipboard"
